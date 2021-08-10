@@ -21,7 +21,7 @@ app.engine('handlebars', handlebars({defaultLayout: 'main'}))
 app.set ('view engine', 'handlebars')
 
 //mongoose
-mongoose.connect('mongodb+srv://Saude:pre1958@saude.5ss1r.mongodb.net/test').then(()=>{
+mongoose.connect().then(()=>{
       console.log('conectado ao mongodb')}).catch((err)=>{
                     console.log('erro ao se conectar'+err)
 })
