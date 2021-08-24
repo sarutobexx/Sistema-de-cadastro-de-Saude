@@ -4,8 +4,24 @@ const mongoose = require('mongoose')
 require('../models/Categoria')
 const Categoria = mongoose.model('categorias')
 const multer = require('multer')
-const upload = multer ({dest:'uploads/'})
 
+//multer
+const storage = multer.diskStorage({
+    destination: (req, file, cb) =>{
+      cb(null, 'uploads/')
+
+    },
+    filename: (req, file, cb) =>{
+
+        cb(null, Date.now()+'-'+file.originalname)
+
+
+    }
+
+
+})
+
+const upload = multer({storage})
 
 router.get('/', (req, res) =>{
 
@@ -14,13 +30,15 @@ router.get('/', (req, res) =>{
 
 
 
+
+
 router.post('/nova/upload', upload.array('img', 3), (req, res) =>{
     const novaCategoria = {
         nome: req.body.nome,
         nomemae: req.body.nomemae,
         nascimento: req.body.nascimento,
-        sexo: req.body.sexo,
-        cor: req.body.cor,
+        genero: req.body.genero,
+        etnia: req.body.etnia,
         deficiencia: req.body.deficiencia,
         email: req.body.email,
         telefonefixo: req.body.telefonefixo,
@@ -36,11 +54,13 @@ router.post('/nova/upload', upload.array('img', 3), (req, res) =>{
         cidade: req.body.cidade,
         estado: req.body.estado, 
         comprovanteendereco: req.body.comprovanteendereco,
+        
     }
 
     new Categoria(novaCategoria).save().then(()=>{
         console.log('categoria salva com sucesso')
         res.render("admin/addcategorias")
+        console.log(req.body, req.files)
         
     }).catch((err)=>{
         console.log('falha ao salvar categoria'+err)

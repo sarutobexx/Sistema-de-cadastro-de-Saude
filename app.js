@@ -7,11 +7,28 @@ const admin = require('./routes/admin')
 const path = require('path')
 const mongoose = require('mongoose')
 const multer = require('multer')
-const upload = multer ({dest:'uploads/'})
 
 
 
 //config
+
+//multer
+const storage = multer.diskStorage({
+      destination: (req, file, cb) =>{
+        cb(null, 'uploads/')
+  
+      },
+      filename: (req, file, cb) =>{
+  
+          cb(null, Date.now()+'-'+file.originalname)
+  
+  
+      }
+  
+  
+  })
+  
+  const upload = multer({storage})
 
 //body Parser
 app.use(bodyParser.urlencoded({extended: true }))
@@ -21,7 +38,7 @@ app.engine('handlebars', handlebars({defaultLayout: 'main'}))
 app.set ('view engine', 'handlebars')
 
 //mongoose
-mongoose.connect().then(()=>{
+mongoose.connect('mongodb+srv://Saude:pre1958@saude.5ss1r.mongodb.net/test?authSource=admin&replicaSet=atlas-nx2mu2-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true').then(()=>{
       console.log('conectado ao mongodb')}).catch((err)=>{
                     console.log('erro ao se conectar'+err)
 })

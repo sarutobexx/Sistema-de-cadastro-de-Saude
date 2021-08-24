@@ -16,11 +16,11 @@ const Categoria = new Schema({
         type: String,
        required: true
     },
-    sexo:{
+    genero:{
         type: String,
         required: true
     },
-    cor:{
+    etnia:{
         type: String,
        required: true
     },
@@ -30,7 +30,7 @@ const Categoria = new Schema({
     },
     email:{
         type: String,
-       required: true
+       required: false
     },
     telefonefixo:{
         type: String,
@@ -50,12 +50,14 @@ const Categoria = new Schema({
 
     cpf:{
         type: String,
-        required: true
+        required: false,
+        unique: true 
     },
 
     sus:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
 
     cep:{
@@ -96,10 +98,11 @@ const Categoria = new Schema({
     },
     comprovanteendereco:{
         type: String,
-        requided: true
+        required: true
     },
 
-    //comprovante de residencia pendente
+  
+   
 
     date:{
         type: Date,
