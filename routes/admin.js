@@ -54,16 +54,49 @@ router.post('/nova/upload', upload.array('img', 3), (req, res) =>{
         cidade: req.body.cidade,
         estado: req.body.estado, 
         comprovanteendereco: req.body.comprovanteendereco,
+        img: fileOriginalname(req.files)
+
         
     }
+    
+
+    function fileOriginalname(file) {
+        arrayOriginalname = []
+        
+       
+        for (var i = 0; i < file.length; ++i) {
+         
+        
+         var exemplo = file[i]["originalname"]
+           
+           arrayOriginalname.push(exemplo)
+        
+    
+
+        }
+
+        return(arrayOriginalname)
+        
+
+    }
+   
+
+   
+
+
+
 
     new Categoria(novaCategoria).save().then(()=>{
         console.log('categoria salva com sucesso')
-        res.render("admin/addcategorias")
+        res.render("admin/categorias")
+        
+      
         console.log(req.body, req.files)
         
     }).catch((err)=>{
         console.log('falha ao salvar categoria'+err)
+        res.render("admin/addcategorias")
+
     })
      
 

@@ -20,6 +20,7 @@ const Categoria = new Schema({
         type: String,
         required: true
     },
+
     etnia:{
         type: String,
        required: true
@@ -101,8 +102,12 @@ const Categoria = new Schema({
         required: true
     },
 
-  
-   
+
+    img:{
+
+        type:[String]
+
+    },
 
     date:{
         type: Date,
