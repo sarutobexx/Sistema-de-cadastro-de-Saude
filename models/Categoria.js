@@ -16,15 +16,7 @@ const Categoria = new Schema({
         type: String,
        required: true
     },
-    genero:{
-        type: String,
-        required: true
-    },
-
-    etnia:{
-        type: String,
-       required: true
-    },
+    
     deficiencia:{
         type: String,
        required: true

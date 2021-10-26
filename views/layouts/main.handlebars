@@ -212,9 +212,12 @@
             	function mSUS(sus){
 				sus=sus.replace(/\D/g,"")
 				sus=sus.replace(/(\d{3})(\d)/,"$1.$2")
-				sus=sus.replace(/(\d{4})(\d)/,"$1.$2")
-                sus=sus.replace(/(\d{4})(\d)/,"$1.$2")
-				sus=sus.replace(/(\d{4})(\d{1,2})$/,"$1-$2")
+				sus=sus.replace(/(\d{3})(\d)/,"$1.$2")
+        sus=sus.replace(/(\d{3})(\d)/,"$1.$2")
+        sus=sus.replace(/(\d{3})(\d)/,"$1.$2")
+        sus=sus.replace(/(\d{3})(\d)/,"$1.$2")
+				
+        
 				return sus
 			}
 			function mCEP(cep){

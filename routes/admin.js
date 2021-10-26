@@ -37,8 +37,6 @@ router.post('/nova/upload', upload.array('img', 3), (req, res) =>{
         nome: req.body.nome,
         nomemae: req.body.nomemae,
         nascimento: req.body.nascimento,
-        genero: req.body.genero,
-        etnia: req.body.etnia,
         deficiencia: req.body.deficiencia,
         email: req.body.email,
         telefonefixo: req.body.telefonefixo,

@@ -15,44 +15,24 @@
       </div>
       
       <div class="row  g-3">
-          <div class="col-md-3" name="nascimento">
+          <div class="col-md-6" name="nascimento">
           <label for="inputState" class="form-label" name="nascimento"> <em>*</em>Data de nascimento</label>
           <input type="text" class="form-control" placeholder="00/00/0000" aria-label="First name" name="nascimento" id="outra_data" maxlength="10" onkeypress="mascaraData(this)"  required>
         </div>
         
-        <div class="col-md-3">
-          <label for="inputState" class="form-label" name="genero" > <em>*</em>Sexo</label>
-          <select id="inputState" name="genero" class="form-select" required>
-            <option selected name="genero">SELECIONE SEU SEXO</option>
-            <option name="genero" >MASCULINO</option>
-            <option name="genero" >FEMININO</option>
-          </select>
-        </div>
+      
 
-        <div class="col-md-3">
-          <label for="inputState" class="form-label" name="etnia"> <em>*</em>Cor</label>
-          <select id="inputState" class="form-select" name="etnia" required>
-            <option selected>SELECIONE SUA COR</option>
-            <option value="Branca" name="etnia">BRANCA</option>
-            <option value="preta" name="etnia" >PRETA</option>
-            <option value="parda" name="etnia">PARDA</option>
-            <option value="asiatica" name="etnia">ASIÁTICA</option>
-            <option value="indígena" name="etnia">INDÍGENA</option>
+      
 
-          </select>
-        </div>  
-
-            <div class="col-md-3">
+            <div class="col-md-6">
           <label for="inputState" class="form-label" name="deficiencia"> <em>*</em>Possui deficiência ?</label>
           <select id="inputState" class="form-select" name="deficiencia" required>
-            <option selected>SELECIONE UMA OPÇÃO</option>
-            <option value="Física" name="deficiencia">Física</option>
+            <option value="Não possui" name="deficiencia" selected>Não possui</option>
             <option value="Auditiva" name="deficiencia">Auditiva</option>
             <option value="Visual" name="deficiencia">Visual</option>
             <option value="Cognitiva" name="deficiencia">Cognitiva</option>
             <option value="Intelectual" name="deficiencia">Intelectual</option>
-            <option value="Não possui" name="deficiencia">Não possui</option>
-
+            <option value="Física" name="deficiencia">Física</option>
           </select>
         </div>  
       </div>
@@ -84,7 +64,7 @@
           </div>
           <div class="col-4">
             <label name="sus" for="inputAddress" class="form-label"> <em>*</em>Cartão SUS:</label>
-            <input type="text" class="form-control" id="inputAddress" maxlength="18" placeholder="000.0000.0000.0000" name="sus" onkeydown="javascript: fMasc( this, mSUS )" required>
+            <input type="text" class="form-control" id="inputAddress" maxlength="19" placeholder="000.000.000.000.000" name="sus" onkeydown="javascript: fMasc( this, mSUS )" required>
           </div>
       </div>
     
